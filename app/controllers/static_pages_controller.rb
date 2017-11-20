@@ -10,4 +10,7 @@ class StaticPagesController < ApplicationController
 
   def Contact
   end
+
+  def Signup
+  end
 end
