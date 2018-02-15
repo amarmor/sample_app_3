@@ -1,7 +1,14 @@
-<% provide(:title, 'Home') %>
+<% if logged_in? %>
+  <%= render 'shared/user_info' %>
+  <%= render 'shared/micropost_form' %>
+  <h3>Micropost Feed</h3>
+  <%= render 'shared/feed' %>
+<% else %>
+  <% provide(:title, 'Home') %>
 
-<h1>Welcome to the Rails Tutorial Sample App!</h1>
+  <h1>Welcome to the Rails Tutorial Sample App!</h1>
 
-<form action="/signup">
-  <input type="submit" value="Sign up!" />
-</form>
+  <form action="/signup">
+    <input type="submit" value="Sign up!" />
+  </form>
+<% end %>
